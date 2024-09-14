@@ -1,8 +1,8 @@
 module.exports = {
-    content: ['./src/**/*/*.{astro,html,js,jsx}'],
+    content: ['./src/**/*/*.{astro,html,js,jsx,tsx,vue,svelte}'],
     theme: {
       extend: {
       }
     },
-    plugins: []
+    plugins: [require('@tailwindcss/line-clamp')]
   }

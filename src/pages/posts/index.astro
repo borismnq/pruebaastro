@@ -6,9 +6,8 @@ import Hero from "../../components/Hero.astro";
 import { getCollection } from "astro:content";
 
 const posts = (await getCollection("tips")).sort(
-	(a, b) => a.data.publishDate.valueOf() - b.data.publishDate.valueOf()
+	(a:any, b:any) => a.data.publishDate.valueOf() - b.data.publishDate.valueOf()
 );
-console.log(posts);
 ---
 
 <Layout title="Welcome to Astro.">
@@ -17,7 +16,7 @@ console.log(posts);
 		<Hero />
 		<ul role="list" class="link-card-grid">
 			{
-				posts.map((post) => (
+				posts.map((post:any) => (
 					<Card
 						title={post.data.title}
 						publishDate={post.data.publishDate}
